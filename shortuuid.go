@@ -21,6 +21,11 @@ func New() string {
 	return DefaultEncoder.Encode(uuid.New())
 }
 
+func NewFromStr(in string) string {
+	id := uuid.MustParse(in)
+	return DefaultEncoder.Encode(id)
+}
+
 // NewWithEncoder returns a new UUIDv4, encoded with enc.
 func NewWithEncoder(enc Encoder) string {
 	return enc.Encode(uuid.New())
