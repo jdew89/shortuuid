@@ -21,6 +21,8 @@ func New() string {
 	return DefaultEncoder.Encode(uuid.New())
 }
 
+// Returns the shortuuid version of the provided UUID
+// Will panic if the input uuid is malformed
 func NewFromStr(in string) string {
 	id := uuid.MustParse(in)
 	return DefaultEncoder.Encode(id)
